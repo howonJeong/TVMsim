@@ -1,0 +1,25 @@
+blocks:
+  - id: B1
+    length: 1500
+  - id: B2
+    length: 1500
+  - id: B3
+    length: 1500
+  - id: B4
+    length: 1500
+  - id: B5
+    length: 1500
+  - id: B6
+    length: 1500
+  - id: B7
+    length: 1500
+  - id: B8
+    length: 1500
+  - id: B9
+    length: 1500
+  - id: B10
+    length: 1500
+  - id: B11
+    length: 1500
+  - id: B12
+    length: 500
