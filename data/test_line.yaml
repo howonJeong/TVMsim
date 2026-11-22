@@ -1,25 +1,36 @@
 blocks:
   - id: B1
     length: 1500
+    next: B2
   - id: B2
     length: 1500
+    next: B3
   - id: B3
     length: 1500
+    next: B4
   - id: B4
     length: 1500
+    next: B5
   - id: B5
     length: 1500
+    next: B6
   - id: B6
     length: 1500
+    next: B7
   - id: B7
     length: 1500
+    next: B8
   - id: B8
     length: 1500
+    next: B9
   - id: B9
     length: 1500
+    next: B10
   - id: B10
     length: 1500
+    next: B11
   - id: B11
     length: 1500
+    next: B12
   - id: B12
     length: 500

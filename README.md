@@ -52,6 +52,7 @@ pip install -r requirements.txt
 python main.py
 
 ## 기술 스택
+
 Python 3.10+
 PyYAML: 배선 데이터
 pytest: 연동 규칙 테스트 (예정)
@@ -60,6 +61,7 @@ ruff: 포맷팅, 린트
 단순화한 점
 
 ## Reminder
+
 이 프로젝트는 학습용 시뮬레이터이다.
 
 블록 길이를 일정하게 두고, 속도코드 단계는 단순화 되었다.
