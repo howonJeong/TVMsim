@@ -30,7 +30,26 @@
 | 관제 · Control | CTC, 자동진로설정 · CTC, automatic route setting | 운행계획 기반 진로 요청, 수동 진로 변경 · Timetable-based route requests, manual overrides |
  
 ---
- 
+
+## 목표 · Goals
+
+예전에 비슷한 프로젝트를 AI에 전부 맡기는 바이브 코딩으로 시도한 적이 있음.
+설명할 수 없었고, 결국 좌절했으므로, 이 프로젝트를 시작했다.
+
+- **이해하며 만들기**: 모든 코드를 직접 작성하고, 왜 그렇게 짰는지 설명할 수 있을 것
+- **Python 실력**: PS 위주의 C++ 경험에서 벗어나, Python과 그 생태계에 익숙해질 것
+- **규모 있는 프로젝트 경험**: 모듈 분리, 클래스 설계, 버전 관리, 테스트 등
+  한 파일짜리 풀이에서는 얻기 어려운 경험을 쌓을 것
+
+> I once tried a similar project through pure "vibe coding", leaving everything to AI.
+> The code grew, but I couldn't explain what I was building, and I ended up frustrated.
+> This project started from the decision to do it differently.
+>
+> - **Build with understanding**: write every line myself and be able to explain why
+> - **Python proficiency**: move beyond competitive-programming C++ and get fluent in Python and its ecosystem
+> - **Real project experience**: module structure, class design, version control, and testing,
+>   which single-file problem solving doesn't teach
+
  ## AI 활용 · Use of AI
 
 이 프로젝트는 AI (Claude Opus 5.5)를 멘토처럼 활용하며 진행했다.
@@ -38,7 +57,7 @@
 > 모든 정답을 알려줄 수 없다고 말하고 도와달라고 한 부분에 대해서만 도와줄 것.
 
 This project was built with AI (Claude Opus 5.5) used as a mentor.
-> *When I ask about a coding problem or anything that requires my own thinking,
+> Rule: When I ask about a coding problem or anything that requires my own thinking,
 > do not give the full answer; help only with the specific part I ask about.*
 
 - **도메인 학습**: TVM430, 연동장치, CTC, KTCS-2 등 철도 신호 개념 설명
@@ -115,3 +134,4 @@ TVMsim/
 > - Block lengths are kept uniform and speed-code steps are simplified.
 > - Real interlockings and ATP systems are SIL4-rated, built on redundant hardware, formal verification, and independent safety assessment. This project does not (and cannot) address those safety-engineering requirements.
 > - TVM was implemented first because its block-based behaviour is intuitive.
+
