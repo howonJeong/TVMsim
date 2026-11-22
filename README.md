@@ -9,25 +9,10 @@
 ## 동기 · Motivation
  
 2026년 11월, 경부고속선 동대구–경주 구간에서 열차 한 대가 고장 나면서 12시간 가까이 지연 여파가 있었음. 이 일을 계기로 고속철도가 열차 간격을 어떻게 유지하는지, 분기에서 충돌을 어떻게 막는지, 이상 상황을 누가 어떻게 처리하는지 궁금해짐.
- 
-이 프로젝트의 목표는 구조를 직접 만들어 보며 이해하는 것과, Python 언어와 생태계에 익숙해지는 것임.
- 
+  
 > In November 2026, a single train failure between Dongdaegu and Gyeongju on the Gyeongbu High-Speed Line caused knock-on delays lasting nearly 12 hours. It made me curious how high-speed lines keep trains apart, how junctions prevent collisions, and who handles abnormal situations and how.
 >
 > This project aims to understand that system by building it, and to get comfortable with Python and its ecosystem along the way.
- 
----
- 
-## 모델링 대상 · What It Models
- 
-| 계층 · Layer | 실제 시스템 · Real System | 이 프로젝트에서의 역할 · Role in This Project |
-| --- | --- | --- |
-| 선로 · Track | 폐색 구간, 분기기, 신호 · Block sections, switches, signals | 블록·분기기·신호를 노드로 하는 방향 그래프 · Directed graph of blocks, switches, and signals |
-| 점유 검지 · Occupancy | 궤도회로 · Track circuits | 열차 위치로 블록 점유 상태 갱신 · Updates block occupancy from train positions |
-| 연동장치 · Interlocking | 전자연동장치 · Electronic interlocking | 진로 설정 조건 검사, 쇄정·해정, 겹치는 진로 배제 · Route checks, locking/release, conflicting-route exclusion |
-| 열차 방호 · Train Protection | TVM430 차내신호 · TVM430 cab signalling | 가장 가까운 정지점까지의 블록 수로 속도코드 계산 · Speed codes from block count to the nearest stop point |
-| 열차 · Train | 차상 장치 + 기관사 · Onboard unit + driver | 가감속, 코드 추종, 과속 시 자동 제동 · Acceleration, code following, overspeed braking |
-| 관제 · Control | CTC, 자동진로설정 · CTC, automatic route setting | 운행계획 기반 진로 요청, 수동 진로 변경 · Timetable-based route requests, manual overrides |
  
 ---
 
@@ -49,6 +34,8 @@
 > - **Python proficiency**: move beyond competitive-programming C++ and get fluent in Python and its ecosystem
 > - **Real project experience**: module structure, class design, version control, and testing,
 >   which single-file problem solving doesn't teach
+
+---
 
  ## AI 활용 · Use of AI
 
@@ -75,6 +62,19 @@ This project was built with AI (Claude Opus 5.5) used as a mentor.
 >
 > As a rule, the code itself was written by me rather than copied from AI answers.
 
+---
+
+## 모델링 대상 · What It Models
+ 
+| 계층 · Layer | 실제 시스템 · Real System | 이 프로젝트에서의 역할 · Role in This Project |
+| --- | --- | --- |
+| 선로 · Track | 폐색 구간, 분기기, 신호 · Block sections, switches, signals | 블록·분기기·신호를 노드로 하는 방향 그래프 · Directed graph of blocks, switches, and signals |
+| 점유 검지 · Occupancy | 궤도회로 · Track circuits | 열차 위치로 블록 점유 상태 갱신 · Updates block occupancy from train positions |
+| 연동장치 · Interlocking | 전자연동장치 · Electronic interlocking | 진로 설정 조건 검사, 쇄정·해정, 겹치는 진로 배제 · Route checks, locking/release, conflicting-route exclusion |
+| 열차 방호 · Train Protection | TVM430 차내신호 · TVM430 cab signalling | 가장 가까운 정지점까지의 블록 수로 속도코드 계산 · Speed codes from block count to the nearest stop point |
+| 열차 · Train | 차상 장치 + 기관사 · Onboard unit + driver | 가감속, 코드 추종, 과속 시 자동 제동 · Acceleration, code following, overspeed braking |
+| 관제 · Control | CTC, 자동진로설정 · CTC, automatic route setting | 운행계획 기반 진로 요청, 수동 진로 변경 · Timetable-based route requests, manual overrides |
+ 
 ---
 
 ## 로드맵 · Roadmap
