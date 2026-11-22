@@ -1,4 +1,8 @@
+# 예시 배선: 본선 고속 구간 + 역 접근 구간
+# 블록 길이는 TVM430 일반값(평탄 구간 약 1500m)을 바탕으로 한 예시
+
 blocks:
+  # 본선 고속 구간
   - id: B1
     length: 1500
     next: B2
@@ -6,13 +10,13 @@ blocks:
     length: 1500
     next: B3
   - id: B3
-    length: 1500
+    length: 1600     # 하구배 구간 가정: 제동거리가 길어져 블록을 길게
     next: B4
   - id: B4
     length: 1500
     next: B5
   - id: B5
-    length: 1500
+    length: 1400     # 상구배 구간 가정
     next: B6
   - id: B6
     length: 1500
@@ -26,11 +30,19 @@ blocks:
   - id: B9
     length: 1500
     next: B10
+  # 역 접근 구간: 표정속도 감소
   - id: B10
-    length: 1500
+    length: 1200
     next: B11
   - id: B11
-    length: 1500
+    length: 1000
     next: B12
   - id: B12
-    length: 500
+    length: 800
+    next: B13
+  - id: B13
+    length: 600
+    next: B14
+  # 역 구내 (나중에 분기기와 착발선이 붙을 자리)
+  - id: B14
+    length: 400

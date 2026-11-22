@@ -1,47 +1,40 @@
 import yaml
-from pprint import pprint
-from dataclasses import dataclass
+from simcore import track, train
 
-@dataclass
-class Block:
-    id: str
-    length: int
-    occupied: bool = False
-    next: str | None = None
-    prev: str | None = None
+def train_occpy_block(line: track.LinkedTrack, test_train: train.Train) -> list:
+    train_pos_info = []
+    curr = test_train.head_block_id
+    remaining_length = test_train.length - test_train.head_offset
+    train_pos_info.append(line.block_dict[curr].id)
 
-    def __str__(self) -> str :
-        return f"[{self.id}{'*' if self.occupied else ''}]{self.length}m"
+    while remaining_length>0: #경계 조건
+        curr=line.block_dict[curr].prev
+        if curr is None:    
+            break
+        train_pos_info.append(line.block_dict[curr].id)
+        remaining_length -= line.block_dict[curr].length
 
-class LinkedTrack:
-    def __init__(self, data):
-        self.block_dict: dict[str, Block] = {}
-        self.head: list[str] =[]
-        for block in data["blocks"]:
-            self.block_dict[block['id']] = Block(**block)
-        self.connect_track()
-        for block in self.block_dict.values():
-            if block.prev is None:
-                self.head.append(block.id) #시작점 여러개 상황?
+    return train_pos_info
 
-    def connect_track(self):
-        for block in self.block_dict.values():
-            if block.next is not None:  
-                self.block_dict[block.next].prev = block.id 
+def update_all_occupancy(line: track.LinkedTrack, train_pos_info_agg: list):
+    for block in line.block_dict.values():
+        block.occupied = False
 
-    def __str__(self) -> str:
-        ret_str = []
-        for cur in self.head:
-            single_line = []
-            while cur is not None:
-                single_line.append((str(self.block_dict[cur])))
-                cur=self.block_dict[cur].next
-            ret_str.append('-'.join(single_line))
-        return  '\n'.join(ret_str)
+    for bid in train_pos_info_agg:
+        line.block_dict[bid].occupied=True
 
-with open('./data/test_line.yaml', 'r', encoding='utf-8') as f:
-    data = yaml.safe_load(f)
+if __name__ == "__main__":
+    with open('./data/test_line.yaml', 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
 
-LT = LinkedTrack(data)
+    whole_line = track.LinkedTrack(data)
+    print("Line Loaded")
+    print(whole_line)
 
-print(str(LT))
+    test_train1 = train.Train('Test1', 'B2', 330, 343)
+    test_train2 = train.Train('Test2', 'B14', 200, 343)
+        
+    update_all_occupancy(whole_line, train_occpy_block(whole_line, test_train1)+train_occpy_block(whole_line, test_train2))
+    print("Train Loaded")
+
+    print(whole_line)

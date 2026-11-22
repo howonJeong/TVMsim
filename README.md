@@ -34,7 +34,7 @@
 ```
 train-sim/
 ├── main.py           # 실행 진입점
-├── trainsim/         # 시뮬레이션 패키지 (track, interlocking, tvm, ctc, render)
+├── simcore/         # 시뮬레이션 패키지 (track, interlocking, tvm, ctc, render)
 ├── data/             # 배선 YAML
 ├── tests/            # pytest
 ├── docs/             # 설계 노트
