@@ -33,10 +33,10 @@
  
 ## 로드맵 · Roadmap
  
-- [x]21Nov26 **1. 선로 모델 · Track Model** — YAML 배선 로딩, `Block` dataclass, 콘솔 출력
-  <br>*Load layout from YAML, `Block` dataclass, console output*
-- [x]22Nov26 **2. 점유 검지 · Occupancy Detection** — 열차 위치에 따른 점유 자동 갱신 (블록 두 개에 걸친 열차 포함)
-  <br>*Automatic occupancy from train position, including trains spanning two blocks*
+- [x] **1. 선로 모델 · Track Model** — YAML 배선 로딩, `Block` dataclass, 콘솔 출력 
+  <br>*Load layout from YAML, `Block` dataclass, console output* - 21Nov26 finished
+- [x] **2. 점유 검지 · Occupancy Detection** — 열차 위치에 따른 점유 자동 갱신 (블록 두 개에 걸친 열차 포함)
+  <br>*Automatic occupancy from train position, including trains spanning two blocks* - 22Nov26 finished
 - [ ] **3. 연동 로직 · Interlocking** — 진로 정의, 설정 조건, 쇄정·해정, 겹치는 진로 배제
   <br>*Route definitions, setting conditions, locking/release, conflict exclusion*
 - [ ] **4. TVM 코드 계산 · TVM Speed Codes** — 정지점에서 거꾸로 따라가며 블록별 속도코드 부여
