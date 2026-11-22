@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     test_train1 = train.Train('Test1', 'B2', 330, 343)
     test_train2 = train.Train('Test2', 'B14', 200, 343)
-        
+    
     update_all_occupancy(whole_line, train_occpy_block(whole_line, test_train1)+train_occpy_block(whole_line, test_train2))
     print("Train Loaded")
 
