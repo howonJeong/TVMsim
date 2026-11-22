@@ -33,9 +33,9 @@
  
 ## 로드맵 · Roadmap
  
-- [x] **1. 선로 모델 · Track Model** — YAML 배선 로딩, `Block` dataclass, 콘솔 출력
+- [x]21Nov26 **1. 선로 모델 · Track Model** — YAML 배선 로딩, `Block` dataclass, 콘솔 출력
   <br>*Load layout from YAML, `Block` dataclass, console output*
-- [x] **2. 점유 검지 · Occupancy Detection** — 열차 위치에 따른 점유 자동 갱신 (블록 두 개에 걸친 열차 포함)
+- [x]22Nov26 **2. 점유 검지 · Occupancy Detection** — 열차 위치에 따른 점유 자동 갱신 (블록 두 개에 걸친 열차 포함)
   <br>*Automatic occupancy from train position, including trains spanning two blocks*
 - [ ] **3. 연동 로직 · Interlocking** — 진로 정의, 설정 조건, 쇄정·해정, 겹치는 진로 배제
   <br>*Route definitions, setting conditions, locking/release, conflict exclusion*
@@ -56,26 +56,13 @@
 ## 프로젝트 구조 · Project Structure
  
 ```
-train-sim/
+TVMsim/
 ├── main.py           # 실행 진입점 · Entry point
 ├── simcore/          # 시뮬레이션 패키지 · Simulation package (track, interlocking, tvm, ctc, render)
 ├── data/             # 배선 YAML · Track layout YAML
 ├── tests/            # pytest
 ├── docs/             # 설계 노트 · Design notes
 └── requirements.txt
-```
- 
----
- 
-## 실행 방법 · Getting Started
- 
-```bash
-git clone <repository-url>
-cd train-sim
-python3 -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
 ```
  
 ---
