@@ -31,6 +31,33 @@
  
 ---
  
+ ## AI 활용 · Use of AI
+
+이 프로젝트는 AI (Claude Opus 5.5)를 멘토처럼 활용하며 진행했다.
+> 지침: PS 같은 코딩 문제나 스스로 사고가 필요한 문제를 풀다가 궁금증이 생겨 질문하면,
+> 모든 정답을 알려줄 수 없다고 말하고 도와달라고 한 부분에 대해서만 도와줄 것.
+
+This project was built with AI (Claude Opus 5.5) used as a mentor.
+> *When I ask about a coding problem or anything that requires my own thinking,
+> do not give the full answer; help only with the specific part I ask about.*
+
+- **도메인 학습**: TVM430, 연동장치, CTC, KTCS-2 등 철도 신호 개념 설명
+- **설계 논의**: 자료구조, 클래스 구조, 모듈 분리 방향에 대한 피드백
+- **코드 리뷰**: 작성한 코드의 버그와 개선점을 힌트 위주로 지적받음
+- **문서·데이터 초안**: README 초안, 예시 배선 YAML
+
+코드는 정답을 받지 않고 직접 작성하는 것을 원칙으로 했다.
+
+>
+> - **Domain learning**: explanations of railway signalling concepts (TVM430, interlocking, CTC, KTCS-2)
+> - **Design discussion**: feedback on data structures, class design, and module layout
+> - **Code review**: bugs and improvements pointed out mainly as hints
+> - **Drafts**: README draft and the example track layout YAML
+>
+> As a rule, the code itself was written by me rather than copied from AI answers.
+
+---
+
 ## 로드맵 · Roadmap
  
 - [x] **1. 선로 모델 · Track Model** — YAML 배선 로딩, `Block` dataclass, 콘솔 출력 
