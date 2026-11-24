@@ -1,4 +1,4 @@
-# 예시 배선: 본선 고속 구간 + 역 접근 구간
+# 예시 배선: 본선 고속 구간 + 역 접근 구간 + 역 구내
 # 블록 길이는 TVM430 일반값(평탄 구간 약 1500m)을 바탕으로 한 예시
 
 blocks:
@@ -42,7 +42,29 @@ blocks:
     next: B13
   - id: B13
     length: 600
-    next: B14
-  # 역 구내 (나중에 분기기와 착발선이 붙을 자리)
-  - id: B14
+    next: W1T
+  # 역 구내
+  - id: W1T          # W1 분기기 구간
+    length: 150
+    next: B14        # 정위 방향 (W1 normal_next와 같아야 함)
+  - id: B14          # 1번선 (통과선)
     length: 400
+  - id: W2T          # W2 분기기 구간
+    length: 120
+    next: B15        # 정위 방향 (W2 normal_next와 같아야 함)
+  - id: B15          # 2번선
+    length: 400
+  - id: B16          # 유치선
+    length: 300
+
+switches:
+  - id: W1
+    block: W1T
+    normal_next: B14
+    reverse_next: W2T
+    direction: REVERSE
+  - id: W2
+    block: W2T
+    normal_next: B15
+    reverse_next: B16
+    direction: REVERSE

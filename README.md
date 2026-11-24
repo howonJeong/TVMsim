@@ -84,7 +84,7 @@ This project was built with AI (Claude Opus 5.5) used as a mentor.
 - [x] **2. 점유 검지 · Occupancy Detection** — 열차 위치에 따른 점유 자동 갱신 (블록 두 개에 걸친 열차 포함)
   <br>*Automatic occupancy from train position, including trains spanning two blocks* - 22Nov26 finished
 - [ ] **3. 연동 로직 · Interlocking** — 진로 정의, 설정 조건, 쇄정·해정, 겹치는 진로 배제
-  <br>*Route definitions, setting conditions, locking/release, conflict exclusion*
+  <br>*Route definitions, setting conditions, locking/release, conflict exclusion* 
 - [ ] **4. TVM 코드 계산 · TVM Speed Codes** — 정지점에서 거꾸로 따라가며 블록별 속도코드 부여
   <br>*Assign per-block speed codes by tracing back from stop points*
 - [ ] **5. 열차 동역학 · Train Dynamics** — 가감속, 코드 추종, 과속 시 자동 제동
